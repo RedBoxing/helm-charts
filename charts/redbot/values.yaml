@@ -5,9 +5,6 @@ image:
   pullPolicy: IfNotPresent
   tag: latest
 
-nameOverride: ""
-fullnameOverride: ""
-
 bot:
   token: ""
   id: 0
