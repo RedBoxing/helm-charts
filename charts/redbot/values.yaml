@@ -4,6 +4,8 @@ image:
   repository: nexus-server:8082/redboxing/redbot
   pullPolicy: IfNotPresent
   tag: latest
+  imagePullSecrets:
+  - name: regcred
 
 bot:
   token: ""
