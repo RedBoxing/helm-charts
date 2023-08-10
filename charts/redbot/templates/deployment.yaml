@@ -5,7 +5,7 @@ metadata:
   labels:
     app: redbot
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: { { .Values.replicaCount } }
   selector:
     matchLabels:
       app: redbot
@@ -16,26 +16,16 @@ spec:
     spec:
       containers:
         - image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          imagePullSecrets: {{ .Values.image.imagePullSecrets }}
-          name: {{ .Chart.Name }}
+          imagePullPolicy: { { .Values.image.pullPolicy } }
+          imagePullSecrets: { { .Values.image.imagePullSecrets } }
+          name: { { .Chart.Name } }
           env:
             - name: BOT_TOKEN
               value: "{{ .Values.bot.token }}"
-            - name: BOT_ID
-              value: "{{ .Values.bot.id }}"
-            - name: CAT_API_KEY
-              value: "{{ .Values.api_keys.cat_api_key }}"
-            - name: HUGGINGFACE_API_KEY
-              value: "{{ .Values.api_keys.huggingface_api_key }}"
-            - name: SPOTIFY_CLIENT_ID
+            - name: RSPOTIFY_CLIENT_ID
               value: "{{ .Values.spotify.client_id }}"
-            - name: SPOTIFY_CLIENT_SECRET
+            - name: RSPOTIFY_CLIENT_SECRET
               value: "{{ .Values.spotify.client_secret }}"
-            - name: GOOGLE_API_KEY
-              value: "{{ .Values.api_keys.google_api_key }}"
-            - name: EXPERIENCE_COOLDOWN
-              value: "{{ .Values.experience_cooldown }}"
             - name: DATABASE_DIALECT
               value: "{{ .Values.database.dialect }}"
             - name: DATABASE_HOST
@@ -50,9 +40,3 @@ spec:
               value: "{{ .Values.database.password }}"
             - name: AUTHOR_ID
               value: "{{ .Values.author_id }}"
-            - name: BOT_GUILD
-              value: "{{ .Values.bot_guild }}"
-            - name: BOT_ERROR_CHANNEL
-              value: "{{ .Values.bot_error_channel }}"
-            - name: DEVELOPMENT_MODE
-              value: "{{ .Values.development_mode }}"
