@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: nexus-server:8082/redboxing/redbot
+  repository: docker.redboxing.fr/redboxing/redbot
   pullPolicy: IfNotPresent
   tag: latest
   imagePullSecrets:
