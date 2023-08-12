@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: docker.redboxing.fr/redboxing/redbot
+  repository: ghcr.io/redboxing/redbot
   pullPolicy: IfNotPresent
   tag: latest
   imagePullSecrets:
