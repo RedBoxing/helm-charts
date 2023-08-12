@@ -4,8 +4,7 @@ image:
   repository: ghcr.io/redboxing/redbot
   pullPolicy: IfNotPresent
   tag: latest
-  imagePullSecrets:
-  - name: regcred
+  imagePullSecrets: ""
 
 bot:
   token: ""
