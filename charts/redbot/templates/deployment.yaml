@@ -5,7 +5,7 @@ metadata:
   labels:
     app: redbot
 spec:
-  replicas: "{{ .Values.replicaCount }}"
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: redbot
